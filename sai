@@ -1,0 +1,16 @@
+provider "aws" {
+  region = "us-east-1"
+}
+variable "ami_id"{
+    description = "ec2 AMI id"
+    type = string
+}
+variable "instance_type"{
+    description = "ec2 instance type"
+    type = string
+}
+resource "aws_instance" "example_instance"{
+    ami = var.ami_id
+    instance_type = var.instance_type
+}
+
